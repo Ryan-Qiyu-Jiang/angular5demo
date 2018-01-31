@@ -1,0 +1,20 @@
+<p>
+  add item
+</p>
+<div [@goals]="goals.length">
+	your list ({{itemCount}})
+	<div *ngFor = "let goal of goals; let i = index" (click)="removeItem(i)">
+		{{goal}}
+	</div>
+</div>
+
+<div>
+	form
+	<form>
+		<input type="text" class="txt" name="item" placeholder="goal" [(ngModel)]="goalText">
+		<br>
+		<span>{{goalText}}</span>
+		<button type="submit" name="item" (click)="addItem()">{{btnText}}</button>
+	</form>
+</div>
+
